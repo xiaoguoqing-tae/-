@@ -83,14 +83,14 @@
 								title:this.datalist[i].name,
 								list:this.list
 							})
+							this.$nextTick(()=>{
+								this.getElementTop();
+							});
 						})
 					}
 					this.leftArray=left;
 					this.mainArray=main;
 				})
-				this.$nextTick(()=>{
-					this.getElementTop();
-				});
 			},
 			/* 获取元素顶部信息 */
 			getElementTop(){

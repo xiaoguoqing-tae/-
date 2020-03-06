@@ -1551,112 +1551,6 @@ uni$1;exports.default = _default;
 
 /***/ }),
 
-/***/ 138:
-/*!******************************************************!*\
-  !*** E:/uni-app/store/components/uni-icons/icons.js ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
-  'contact': "\uE100",
-  'person': "\uE101",
-  'personadd': "\uE102",
-  'contact-filled': "\uE130",
-  'person-filled': "\uE131",
-  'personadd-filled': "\uE132",
-  'phone': "\uE200",
-  'email': "\uE201",
-  'chatbubble': "\uE202",
-  'chatboxes': "\uE203",
-  'phone-filled': "\uE230",
-  'email-filled': "\uE231",
-  'chatbubble-filled': "\uE232",
-  'chatboxes-filled': "\uE233",
-  'weibo': "\uE260",
-  'weixin': "\uE261",
-  'pengyouquan': "\uE262",
-  'chat': "\uE263",
-  'qq': "\uE264",
-  'videocam': "\uE300",
-  'camera': "\uE301",
-  'mic': "\uE302",
-  'location': "\uE303",
-  'mic-filled': "\uE332",
-  'speech': "\uE332",
-  'location-filled': "\uE333",
-  'micoff': "\uE360",
-  'image': "\uE363",
-  'map': "\uE364",
-  'compose': "\uE400",
-  'trash': "\uE401",
-  'upload': "\uE402",
-  'download': "\uE403",
-  'close': "\uE404",
-  'redo': "\uE405",
-  'undo': "\uE406",
-  'refresh': "\uE407",
-  'star': "\uE408",
-  'plus': "\uE409",
-  'minus': "\uE410",
-  'circle': "\uE411",
-  'checkbox': "\uE411",
-  'close-filled': "\uE434",
-  'clear': "\uE434",
-  'refresh-filled': "\uE437",
-  'star-filled': "\uE438",
-  'plus-filled': "\uE439",
-  'minus-filled': "\uE440",
-  'circle-filled': "\uE441",
-  'checkbox-filled': "\uE442",
-  'closeempty': "\uE460",
-  'refreshempty': "\uE461",
-  'reload': "\uE462",
-  'starhalf': "\uE463",
-  'spinner': "\uE464",
-  'spinner-cycle': "\uE465",
-  'search': "\uE466",
-  'plusempty': "\uE468",
-  'forward': "\uE470",
-  'back': "\uE471",
-  'left-nav': "\uE471",
-  'checkmarkempty': "\uE472",
-  'home': "\uE500",
-  'navigate': "\uE501",
-  'gear': "\uE502",
-  'paperplane': "\uE503",
-  'info': "\uE504",
-  'help': "\uE505",
-  'locked': "\uE506",
-  'more': "\uE507",
-  'flag': "\uE508",
-  'home-filled': "\uE530",
-  'gear-filled': "\uE532",
-  'info-filled': "\uE534",
-  'help-filled': "\uE535",
-  'more-filled': "\uE537",
-  'settings': "\uE560",
-  'list': "\uE562",
-  'bars': "\uE563",
-  'loop': "\uE565",
-  'paperclip': "\uE567",
-  'eye': "\uE568",
-  'arrowup': "\uE580",
-  'arrowdown': "\uE581",
-  'arrowleft': "\uE582",
-  'arrowright': "\uE583",
-  'arrowthinup': "\uE584",
-  'arrowthindown': "\uE585",
-  'arrowthinleft': "\uE586",
-  'arrowthinright': "\uE587",
-  'pulldown': "\uE588",
-  'closefill': "\uE589",
-  'sound': "\uE590",
-  'scan': "\uE612" };exports.default = _default;
-
-/***/ }),
-
 /***/ 14:
 /*!**********************************************************************************************************!*\
   !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/runtime/componentNormalizer.js ***!
@@ -1775,6 +1669,112 @@ function normalizeComponent (
   }
 }
 
+
+/***/ }),
+
+/***/ 154:
+/*!******************************************************!*\
+  !*** E:/uni-app/store/components/uni-icons/icons.js ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  'contact': "\uE100",
+  'person': "\uE101",
+  'personadd': "\uE102",
+  'contact-filled': "\uE130",
+  'person-filled': "\uE131",
+  'personadd-filled': "\uE132",
+  'phone': "\uE200",
+  'email': "\uE201",
+  'chatbubble': "\uE202",
+  'chatboxes': "\uE203",
+  'phone-filled': "\uE230",
+  'email-filled': "\uE231",
+  'chatbubble-filled': "\uE232",
+  'chatboxes-filled': "\uE233",
+  'weibo': "\uE260",
+  'weixin': "\uE261",
+  'pengyouquan': "\uE262",
+  'chat': "\uE263",
+  'qq': "\uE264",
+  'videocam': "\uE300",
+  'camera': "\uE301",
+  'mic': "\uE302",
+  'location': "\uE303",
+  'mic-filled': "\uE332",
+  'speech': "\uE332",
+  'location-filled': "\uE333",
+  'micoff': "\uE360",
+  'image': "\uE363",
+  'map': "\uE364",
+  'compose': "\uE400",
+  'trash': "\uE401",
+  'upload': "\uE402",
+  'download': "\uE403",
+  'close': "\uE404",
+  'redo': "\uE405",
+  'undo': "\uE406",
+  'refresh': "\uE407",
+  'star': "\uE408",
+  'plus': "\uE409",
+  'minus': "\uE410",
+  'circle': "\uE411",
+  'checkbox': "\uE411",
+  'close-filled': "\uE434",
+  'clear': "\uE434",
+  'refresh-filled': "\uE437",
+  'star-filled': "\uE438",
+  'plus-filled': "\uE439",
+  'minus-filled': "\uE440",
+  'circle-filled': "\uE441",
+  'checkbox-filled': "\uE442",
+  'closeempty': "\uE460",
+  'refreshempty': "\uE461",
+  'reload': "\uE462",
+  'starhalf': "\uE463",
+  'spinner': "\uE464",
+  'spinner-cycle': "\uE465",
+  'search': "\uE466",
+  'plusempty': "\uE468",
+  'forward': "\uE470",
+  'back': "\uE471",
+  'left-nav': "\uE471",
+  'checkmarkempty': "\uE472",
+  'home': "\uE500",
+  'navigate': "\uE501",
+  'gear': "\uE502",
+  'paperplane': "\uE503",
+  'info': "\uE504",
+  'help': "\uE505",
+  'locked': "\uE506",
+  'more': "\uE507",
+  'flag': "\uE508",
+  'home-filled': "\uE530",
+  'gear-filled': "\uE532",
+  'info-filled': "\uE534",
+  'help-filled': "\uE535",
+  'more-filled': "\uE537",
+  'settings': "\uE560",
+  'list': "\uE562",
+  'bars': "\uE563",
+  'loop': "\uE565",
+  'paperclip': "\uE567",
+  'eye': "\uE568",
+  'arrowup': "\uE580",
+  'arrowdown': "\uE581",
+  'arrowleft': "\uE582",
+  'arrowright': "\uE583",
+  'arrowthinup': "\uE584",
+  'arrowthindown': "\uE585",
+  'arrowthinleft': "\uE586",
+  'arrowthinright': "\uE587",
+  'pulldown': "\uE588",
+  'closefill': "\uE589",
+  'sound': "\uE590",
+  'scan': "\uE612" };exports.default = _default;
 
 /***/ }),
 
@@ -7820,7 +7820,7 @@ internalMixin(Vue);
 /* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.getorder = exports.createorder = exports.addaddress = exports.getaddress = exports.getcartinfo = exports.removecartinfo = exports.updatecart = exports.joincart = exports.detail = exports.goods = exports.sorts = exports.getIndex = void 0;var getIndex = function getIndex(params) {return (
     //首页列表
     uni.request({
-      url: "https://api.zbztb.cn/api/public/v1/home/floordata",
+      url: "https://api-hmugo-web.itheima.net/api/public/v1/home/floordata",
       data: params,
       header: {
         "content-type": "json" } }));};exports.getIndex = getIndex;
@@ -7920,8 +7920,9 @@ var addaddress = function addaddress(params) {return (
 var createorder = function createorder(params) {return (
     //创建订单
     uni.request({
-      url: " https://api.it120.cc/tae/order/create",
+      url: "https://api.it120.cc/tae/order/create",
       data: params,
+      method: 'POST',
       header: {
         "content-type": "x-www-form-urlencoded" } }));};exports.createorder = createorder;
 
@@ -9951,7 +9952,7 @@ module.exports =
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/home/home": { "navigationBarTitleText": "首页", "usingComponents": { "uni-search-bar": "/components/uni-search-bar/uni-search-bar", "wuc-tab": "/components/wuc-tab/wuc-tab" }, "usingAutoImportComponents": { "uni-search-bar": "/components/uni-search-bar/uni-search-bar", "wuc-tab": "/components/wuc-tab/wuc-tab" } }, "pages/cart/cart": { "navigationBarTitleText": "购物车", "usingComponents": { "uni-number-box": "/components/uni-number-box/uni-number-box" }, "usingAutoImportComponents": { "uni-number-box": "/components/uni-number-box/uni-number-box" } }, "pages/product/product": { "navigationBarTitleText": "商品", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/user/user": { "navigationBarTitleText": "我的", "usingComponents": { "uni-drawer": "/components/uni-drawer/uni-drawer" }, "usingAutoImportComponents": { "uni-drawer": "/components/uni-drawer/uni-drawer" } }, "pages/goods/goods": { "usingComponents": { "uni-popup": "/components/uni-popup/uni-popup", "uni-goods-nav": "/components/uni-goods-nav/uni-goods-nav", "uni-number-box": "/components/uni-number-box/uni-number-box" }, "usingAutoImportComponents": { "uni-popup": "/components/uni-popup/uni-popup", "uni-number-box": "/components/uni-number-box/uni-number-box", "uni-goods-nav": "/components/uni-goods-nav/uni-goods-nav" } }, "pages/login/login": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/register/register": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/address/address": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/addaddress/addaddress": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/order/order": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/orderlist/orderlist": {} }, "globalStyle": {} };exports.default = _default;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/home/home": { "navigationBarTitleText": "首页" }, "pages/cart/cart": { "navigationBarTitleText": "购物车" }, "pages/product/product": { "navigationBarTitleText": "商品", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/user/user": { "navigationBarTitleText": "我的" }, "pages/goods/goods": {}, "pages/login/login": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/register/register": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/address/address": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/addaddress/addaddress": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/order/order": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/orderlist/orderlist": { "usingComponents": {}, "usingAutoImportComponents": {} } }, "globalStyle": {} };exports.default = _default;
 
 /***/ }),
 

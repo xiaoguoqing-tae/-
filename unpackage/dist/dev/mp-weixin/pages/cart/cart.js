@@ -97,7 +97,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
 var components = {
   "uni-number-box": () =>
-    __webpack_require__.e(/*! import() | components/uni-number-box/uni-number-box */ "components/uni-number-box/uni-number-box").then(__webpack_require__.bind(null, /*! @/components/uni-number-box/uni-number-box.vue */ 105))
+    __webpack_require__.e(/*! import() | components/uni-number-box/uni-number-box */ "components/uni-number-box/uni-number-box").then(__webpack_require__.bind(null, /*! @/components/uni-number-box/uni-number-box.vue */ 121))
 }
 var render = function() {
   var _vm = this
@@ -168,7 +168,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _apis = __webpack_require__(/*! ../../apis */ 21);function _slicedToArray(arr, i) {return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest();}function _nonIterableRest() {throw new TypeError("Invalid attempt to destructure non-iterable instance");}function _iterableToArrayLimit(arr, i) {var _arr = [];var _n = true;var _d = false;var _e = undefined;try {for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {_arr.push(_s.value);if (i && _arr.length === i) break;}} catch (err) {_d = true;_e = err;} finally {try {if (!_n && _i["return"] != null) _i["return"]();} finally {if (_d) throw _e;}}return _arr;}function _arrayWithHoles(arr) {if (Array.isArray(arr)) return arr;}var uniNumberBox = function uniNumberBox() {return __webpack_require__.e(/*! import() | components/uni-number-box/uni-number-box */ "components/uni-number-box/uni-number-box").then(__webpack_require__.bind(null, /*! @/components/uni-number-box/uni-number-box.vue */ 105));};var _default =
+
+
+
+
+var _apis = __webpack_require__(/*! ../../apis */ 21);function _slicedToArray(arr, i) {return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest();}function _nonIterableRest() {throw new TypeError("Invalid attempt to destructure non-iterable instance");}function _iterableToArrayLimit(arr, i) {var _arr = [];var _n = true;var _d = false;var _e = undefined;try {for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {_arr.push(_s.value);if (i && _arr.length === i) break;}} catch (err) {_d = true;_e = err;} finally {try {if (!_n && _i["return"] != null) _i["return"]();} finally {if (_d) throw _e;}}return _arr;}function _arrayWithHoles(arr) {if (Array.isArray(arr)) return arr;}var uniNumberBox = function uniNumberBox() {return __webpack_require__.e(/*! import() | components/uni-number-box/uni-number-box */ "components/uni-number-box/uni-number-box").then(__webpack_require__.bind(null, /*! @/components/uni-number-box/uni-number-box.vue */ 121));};var _default =
 
 {
   components: { uniNumberBox: uniNumberBox },
@@ -182,17 +186,22 @@ var _apis = __webpack_require__(/*! ../../apis */ 21);function _slicedToArray(ar
 
   },
   onShow: function onShow() {
-    this.getmore()();
-  },
-  onLoad: function onLoad() {
     try {
       var value = uni.getStorageSync('token');
-      if (value) {
+      if (value !== "") {
         this.token = value.token;
+        console.log(this.token);
+        this.getmore();
+      } else {
+        this.token = "";
       }
     } catch (e) {
       // error
     }
+
+  },
+  onLoad: function onLoad() {
+
   },
   methods: {
     getmore: function getmore() {var _this = this;
@@ -244,11 +253,15 @@ var _apis = __webpack_require__(/*! ../../apis */ 21);function _slicedToArray(ar
         if (item.checked == true) {
           _this2.serverData.push({ "goodsId": item.goodsId, "number": item.number, "pic": item.pic, "name": item.name, "price": item.price });
           _this2.navData = JSON.stringify(_this2.serverData);
-          uni.navigateTo({
-            url: "../order/order?index=" + _this2.navData });
-
         }
       });
+      uni.navigateTo({
+        url: "../order/order?index=" + this.navData });
+
+    },
+    gologin: function gologin() {
+      uni.switchTab({
+        url: "../user/user" });
 
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))

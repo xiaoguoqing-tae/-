@@ -218,13 +218,13 @@ var _apis = __webpack_require__(/*! ../../apis */ 21);function _slicedToArray(ar
               title: _this2.datalist[i].name,
               list: _this2.list });
 
+            _this2.$nextTick(function () {
+              _this2.getElementTop();
+            });
           });};for (var i = 0; i < _this2.datalist.length; i++) {_loop(i);
         }
         _this2.leftArray = left;
         _this2.mainArray = main;
-      });
-      this.$nextTick(function () {
-        _this2.getElementTop();
       });
     },
     /* 获取元素顶部信息 */

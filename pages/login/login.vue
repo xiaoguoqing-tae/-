@@ -52,12 +52,15 @@
 					if(res.msg=="success"){
 						try{
 							uni.setStorageSync('token',res.data)
-						}catch(e){
-							
-						}			
-						uni.switchTab({
-							url:"../user/user"
-						})
+							uni.showToast({
+								title:"登录成功"
+							})
+							setTimeout(function() {
+								uni.switchTab({
+									url:"../user/user"
+								})
+							}, 2000);
+						}catch(e){}	
 					}
 				 })
 				 }

@@ -1,7 +1,7 @@
 export const getIndex=params=>(
 	//首页列表
 		uni.request({
-		    url: `https://api.zbztb.cn/api/public/v1/home/floordata`,
+		    url: `https://api-hmugo-web.itheima.net/api/public/v1/home/floordata`,
 			data:params,
 			header:{
 				"content-type":"json"
@@ -101,8 +101,9 @@ export const addaddress=params=>(
 export const createorder=params=>(
 	//创建订单
 		uni.request({
-		    url: ` https://api.it120.cc/tae/order/create`,
+		    url: `https://api.it120.cc/tae/order/create`,
 			data:params,
+			method:'POST',
 			header:{
 				"content-type":"x-www-form-urlencoded"
 			}

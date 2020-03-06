@@ -97,11 +97,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
 var components = {
   "uni-popup": () =>
-    __webpack_require__.e(/*! import() | components/uni-popup/uni-popup */ "components/uni-popup/uni-popup").then(__webpack_require__.bind(null, /*! @/components/uni-popup/uni-popup.vue */ 119)),
+    __webpack_require__.e(/*! import() | components/uni-popup/uni-popup */ "components/uni-popup/uni-popup").then(__webpack_require__.bind(null, /*! @/components/uni-popup/uni-popup.vue */ 135)),
   "uni-number-box": () =>
-    __webpack_require__.e(/*! import() | components/uni-number-box/uni-number-box */ "components/uni-number-box/uni-number-box").then(__webpack_require__.bind(null, /*! @/components/uni-number-box/uni-number-box.vue */ 105)),
+    __webpack_require__.e(/*! import() | components/uni-number-box/uni-number-box */ "components/uni-number-box/uni-number-box").then(__webpack_require__.bind(null, /*! @/components/uni-number-box/uni-number-box.vue */ 121)),
   "uni-goods-nav": () =>
-    __webpack_require__.e(/*! import() | components/uni-goods-nav/uni-goods-nav */ "components/uni-goods-nav/uni-goods-nav").then(__webpack_require__.bind(null, /*! @/components/uni-goods-nav/uni-goods-nav.vue */ 126))
+    __webpack_require__.e(/*! import() | components/uni-goods-nav/uni-goods-nav */ "components/uni-goods-nav/uni-goods-nav").then(__webpack_require__.bind(null, /*! @/components/uni-goods-nav/uni-goods-nav.vue */ 142))
 }
 var render = function() {
   var _vm = this
@@ -223,7 +223,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _apis = __webpack_require__(/*! ../../apis */ 21);function _slicedToArray(arr, i) {return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest();}function _nonIterableRest() {throw new TypeError("Invalid attempt to destructure non-iterable instance");}function _iterableToArrayLimit(arr, i) {var _arr = [];var _n = true;var _d = false;var _e = undefined;try {for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {_arr.push(_s.value);if (i && _arr.length === i) break;}} catch (err) {_d = true;_e = err;} finally {try {if (!_n && _i["return"] != null) _i["return"]();} finally {if (_d) throw _e;}}return _arr;}function _arrayWithHoles(arr) {if (Array.isArray(arr)) return arr;}var uniPopup = function uniPopup() {return __webpack_require__.e(/*! import() | components/uni-popup/uni-popup */ "components/uni-popup/uni-popup").then(__webpack_require__.bind(null, /*! @/components/uni-popup/uni-popup.vue */ 119));};var uniGoodsNav = function uniGoodsNav() {return __webpack_require__.e(/*! import() | components/uni-goods-nav/uni-goods-nav */ "components/uni-goods-nav/uni-goods-nav").then(__webpack_require__.bind(null, /*! @/components/uni-goods-nav/uni-goods-nav.vue */ 126));};var uniNumberBox = function uniNumberBox() {return __webpack_require__.e(/*! import() | components/uni-number-box/uni-number-box */ "components/uni-number-box/uni-number-box").then(__webpack_require__.bind(null, /*! @/components/uni-number-box/uni-number-box.vue */ 105));};var _default =
+var _apis = __webpack_require__(/*! ../../apis */ 21);function _slicedToArray(arr, i) {return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest();}function _nonIterableRest() {throw new TypeError("Invalid attempt to destructure non-iterable instance");}function _iterableToArrayLimit(arr, i) {var _arr = [];var _n = true;var _d = false;var _e = undefined;try {for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {_arr.push(_s.value);if (i && _arr.length === i) break;}} catch (err) {_d = true;_e = err;} finally {try {if (!_n && _i["return"] != null) _i["return"]();} finally {if (_d) throw _e;}}return _arr;}function _arrayWithHoles(arr) {if (Array.isArray(arr)) return arr;}var uniPopup = function uniPopup() {return __webpack_require__.e(/*! import() | components/uni-popup/uni-popup */ "components/uni-popup/uni-popup").then(__webpack_require__.bind(null, /*! @/components/uni-popup/uni-popup.vue */ 135));};var uniGoodsNav = function uniGoodsNav() {return __webpack_require__.e(/*! import() | components/uni-goods-nav/uni-goods-nav */ "components/uni-goods-nav/uni-goods-nav").then(__webpack_require__.bind(null, /*! @/components/uni-goods-nav/uni-goods-nav.vue */ 142));};var uniNumberBox = function uniNumberBox() {return __webpack_require__.e(/*! import() | components/uni-number-box/uni-number-box */ "components/uni-number-box/uni-number-box").then(__webpack_require__.bind(null, /*! @/components/uni-number-box/uni-number-box.vue */ 121));};var _default =
 
 
 
@@ -279,8 +279,10 @@ var _apis = __webpack_require__(/*! ../../apis */ 21);function _slicedToArray(ar
   onShow: function onShow() {
     try {
       var value = uni.getStorageSync('token');
-      if (value) {
+      if (value !== "") {
         this.token = value.token;
+      } else {
+        this.token == "";
       }
     } catch (e) {
       // error
@@ -295,21 +297,40 @@ var _apis = __webpack_require__(/*! ../../apis */ 21);function _slicedToArray(ar
     },
     tocart: function tocart() {
       this.$refs.popup.close();
-      (0, _apis.joincart)({
-        goodsId: this.id,
-        number: this.num,
-        token: this.token }).
-      then(function (res) {var _res2 = _slicedToArray(
-        res, 2),err = _res2[0],data = _res2[1];
-        console.log(data.data.msg);
-      });
-      uni.showToast({
-        title: "已添加到购物车" });
+      if (this.token == "") {
+        uni.showToast({
+          title: "请先登录！",
+          icon: "none" });
 
+      } else {
+        (0, _apis.joincart)({
+          goodsId: this.id,
+          number: this.num,
+          token: this.token }).
+        then(function (res) {var _res2 = _slicedToArray(
+          res, 2),err = _res2[0],data = _res2[1];
+          console.log(data.data.msg);
+        });
+        uni.showToast({
+          title: "已添加到购物车" });
+
+      }
     },
     topay: function topay() {
       this.$refs.popup.close();
-      console.log("去付款");
+      if (this.token == "") {
+        uni.showToast({
+          title: "请先登录！",
+          icon: "none" });
+
+      } else {
+        this.serverData = [];
+        this.serverData.push({ "goodsId": this.datalist.basicInfo.id, "number": this.num, "pic": this.datalist.basicInfo.pic, "name": this.datalist.basicInfo.name, "price": this.datalist.basicInfo.minPrice });
+        this.navData = JSON.stringify(this.serverData);
+        uni.navigateTo({
+          url: "../order/order?index=" + this.navData });
+
+      }
     },
     onClick: function onClick(e) {
       uni.showToast({

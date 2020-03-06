@@ -137,9 +137,11 @@
 		onShow() {
 			try {
 			    const value = uni.getStorageSync('token');
-			    if (value) {
+			    if (value!=="") {
 			        this.token=value.token
-			    }
+			    }else{
+					this.token==""
+				}
 			} catch (e) {
 			    // error
 			}
@@ -153,21 +155,40 @@
 			},
 			tocart(){
 				this.$refs.popup.close()
-				joincart({
-					goodsId:this.id,
-					number:this.num,
-					token:this.token
-				}).then(res=>{
-					let [err,data]=res;
-					console.log(data.data.msg)
-				})
-				uni.showToast({
-					title:"已添加到购物车"
-				})
+				if(this.token==""){
+					uni.showToast({
+						title:"请先登录！",
+						icon:"none"
+					})
+				}else{
+					joincart({
+						goodsId:this.id,
+						number:this.num,
+						token:this.token
+					}).then(res=>{
+						let [err,data]=res;
+						console.log(data.data.msg)
+					})
+					uni.showToast({
+						title:"已添加到购物车"
+					})
+				}
 			},
 			topay(){
 				this.$refs.popup.close()
-				console.log("去付款")
+				if(this.token==""){
+					uni.showToast({
+						title:"请先登录！",
+						icon:"none"
+					})
+				}else{
+					this.serverData = [];
+					this.serverData.push({"goodsId":this.datalist.basicInfo.id,"number":this.num,"pic":this.datalist.basicInfo.pic,"name":this.datalist.basicInfo.name,"price":this.datalist.basicInfo.minPrice});
+						 this.navData = JSON.stringify(this.serverData)
+						 uni.navigateTo({
+						 url:"../order/order?index="+this.navData
+					}) 
+				}
 			},
 			onClick (e) {
 			    uni.showToast({

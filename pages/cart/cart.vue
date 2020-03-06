@@ -1,15 +1,19 @@
 <template>
 	<view>
-		<checkbox-group>
+		<view :style="{display:token==''?'block':'none'}">
+			<view class="wz">你还未登录，请前往登录</view>
+			<view class="btn" @click="gologin">去登录</view>
+		</view >
+		<checkbox-group :style="{display:token!==''?'block':'none'}">
 		<view class="container" v-for="(item,index) in infolist" :key="index">
 				<view class="xz">
 					<checkbox :value="[item.price*item.number]" :checked="item.checked" @click="checkboxChange($event,item)"></checkbox>
-					<view style="background: #007AFF;" @click="del(item.key,index)">删除</view>
 				</view>
 				<view class="container2">
 					<image :src="item.pic"></image>
 					<view class="container3">
 						<view>{{item.name}}</view>
+						<view style="background: #007AFF;width: 60upx;border-radius: 20upx;" @click="del(item.key,index)">删除</view>
 						<view class="container4">
 							<view class="price">￥{{item.price}}</view>
 							<uni-number-box :value="item.number" @change="bindChange($event,item)"></uni-number-box>
@@ -44,17 +48,22 @@
 			}
 		},
 		onShow() {
-			this.getmore()()
-		},
-		onLoad() {
 			try {
-			    const value = uni.getStorageSync('token');
-			    if (value) {
-			        this.token=value.token
-			    }
+				const value = uni.getStorageSync('token');
+				if(value!==""){
+					this.token=value.token
+					console.log(this.token)
+					this.getmore()
+				}else{
+					this.token=""
+				}
 			} catch (e) {
 			    // error
-			}	
+			}
+			
+		},
+		onLoad() {
+				
 		},
 		methods: {
 			getmore(){
@@ -106,12 +115,16 @@
 				   if (item.checked == true) {
 				       this.serverData.push({"goodsId":item.goodsId,"number":item.number,"pic":item.pic,"name":item.name,"price":item.price});
 					   this.navData = JSON.stringify(this.serverData)
-					   uni.navigateTo({
-					   	url:"../order/order?index="+this.navData
-					   })    
-				     }
-				});     
-					                 
+				     }   
+				});
+				 uni.navigateTo({
+				 	url:"../order/order?index="+this.navData
+				 })     	                 
+			},
+			gologin(){
+				uni.switchTab({
+					url:"../user/user"
+				})
 			}
 		},
 	}
@@ -121,6 +134,20 @@
 page{
 	background: #f0f0f0;
 	}
+.wz{
+	height: 200upx;
+	line-height: 200upx;
+	text-align: center;
+}
+.btn{
+	height: 80upx;
+	line-height: 80upx;
+	text-align: center;
+	background: #007AFF;
+	width: 80%;
+	margin-left: 10%;
+	border-radius: 20upx;
+}
 .container{
 	width: 84%;
 	margin:20upx 0 0 20upx;

@@ -187,12 +187,15 @@ WXAPI.init('tae');var _default =
             if (res.msg == "success") {
               try {
                 uni.setStorageSync('token', res.data);
-              } catch (e) {
+                uni.showToast({
+                  title: "登录成功" });
 
-              }
-              uni.switchTab({
-                url: "../user/user" });
+                setTimeout(function () {
+                  uni.switchTab({
+                    url: "../user/user" });
 
+                }, 2000);
+              } catch (e) {}
             }
           });
         } });

@@ -33,12 +33,12 @@
 		methods: {
 			createorder(){
 				createorder({
-					address:this.infolist.address,
 					goodsJsonStr:this.a,
 					token:this.token
 				}).then(res=>{
 					let [err,data]=res;
 					console.log(data)
+					console.log(this.a)
 					// uni.showToast({
 					// 	title:"创建订单成功"
 					// })
@@ -49,16 +49,9 @@
 			}
 		},
 		onLoad(options) {
-			this.a=options.index
-			var data = JSON.parse(options.index)
-			this.datalist=data;
-			console.log(this.a)
-			for(let i=0;i<this.datalist.length;i++){
-				this.total+=Number(this.datalist[i].number)*Number(this.datalist[i].price)  
-			}
 			try {
 			    const value = uni.getStorageSync('token');
-			    if (value) {
+			    if (value!=="") {
 			        this.token=value.token
 					getaddress({
 						token:this.token
@@ -70,6 +63,12 @@
 			    }
 			} catch (e) {
 			    // error
+			}
+			this.a=options.index
+			var data = JSON.parse(options.index)
+			this.datalist=data;
+			for(let i=0;i<this.datalist.length;i++){
+				this.total+=Number(this.datalist[i].number)*Number(this.datalist[i].price)  
 			}
 		}
 	}

@@ -27,6 +27,20 @@
 page {
   background: #f0f0f0;
 }
+.wz {
+  height: 200rpx;
+  line-height: 200rpx;
+  text-align: center;
+}
+.btn {
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  background: #007AFF;
+  width: 80%;
+  margin-left: 10%;
+  border-radius: 20rpx;
+}
 .container {
   width: 84%;
   margin: 20rpx 0 0 20rpx;
